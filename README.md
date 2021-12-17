@@ -1,4 +1,4 @@
-# Blogger Dapp
+# Todo Dapp
 
 ## Description
 This is a Dapp where users can create todo lists and toggle between completed tasks and not completed tasks
