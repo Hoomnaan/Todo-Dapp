@@ -3,7 +3,8 @@
 ## Description
 This is a Dapp where users can create todo lists and toggle between completed tasks and not completed tasks
 
-## Usage
+## Live Demo
+[Todo Dapp](https://hoomnaan.github.io/Todo-Dapp/)
 
 ### Requirements
 1. Install the [CeloExtensionWallet](https://chrome.google.com/webstore/detail/celoextensionwallet/kkilomkmpmkbdnfelcpgckmpcaemjcdh?hl=en) from the Google Chrome Store.
