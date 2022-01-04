@@ -1,6 +1,5 @@
 [
 	{
-		"constant": false,
 		"inputs": [
 			{
 				"internalType": "string",
@@ -10,12 +9,28 @@
 		],
 		"name": "addTask",
 		"outputs": [],
-		"payable": false,
 		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
-		"constant": true,
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_taskIndex",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "_task",
+				"type": "string"
+			}
+		],
+		"name": "editTask",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
 		"inputs": [
 			{
 				"internalType": "uint256",
@@ -36,12 +51,10 @@
 				"type": "bool"
 			}
 		],
-		"payable": false,
 		"stateMutability": "view",
 		"type": "function"
 	},
 	{
-		"constant": true,
 		"inputs": [],
 		"name": "getTaskCount",
 		"outputs": [
@@ -51,12 +64,10 @@
 				"type": "uint256"
 			}
 		],
-		"payable": false,
 		"stateMutability": "view",
 		"type": "function"
 	},
 	{
-		"constant": true,
 		"inputs": [],
 		"name": "taskCount",
 		"outputs": [
@@ -66,12 +77,10 @@
 				"type": "uint256"
 			}
 		],
-		"payable": false,
 		"stateMutability": "view",
 		"type": "function"
 	},
 	{
-		"constant": true,
 		"inputs": [
 			{
 				"internalType": "uint256",
@@ -92,27 +101,19 @@
 				"type": "bool"
 			}
 		],
-		"payable": false,
 		"stateMutability": "view",
 		"type": "function"
 	},
 	{
-		"constant": false,
 		"inputs": [
 			{
 				"internalType": "uint256",
 				"name": "_taskIndex",
 				"type": "uint256"
-			},
-			{
-				"internalType": "bool",
-				"name": "_status",
-				"type": "bool"
 			}
 		],
 		"name": "updateStatus",
 		"outputs": [],
-		"payable": false,
 		"stateMutability": "nonpayable",
 		"type": "function"
 	}

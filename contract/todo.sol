@@ -11,7 +11,7 @@ contract Todo{
     }
 
     mapping (uint => Task) public tasks;
-    
+
     //function to add a task
     function addTask(string memory _task) public {
         tasks[taskCount] = Task(_task, false);
@@ -24,14 +24,19 @@ contract Todo{
         bool
     ) {
         return (
-            tasks[_taskIndex].task,
-            tasks[_taskIndex].isDone
+        tasks[_taskIndex].task,
+        tasks[_taskIndex].isDone
         );
     }
 
     // function to update status of a task
-    function updateStatus(uint _taskIndex, bool _status) public {
-        tasks[_taskIndex].isDone = _status;
+    function editTask(uint _taskIndex, string memory _task) public {
+        tasks[_taskIndex].task = _task;
+    }
+
+    // function to update status of a task
+    function updateStatus(uint _taskIndex) public {
+        tasks[_taskIndex].isDone = !tasks[_taskIndex].isDone;
     }
 
 
