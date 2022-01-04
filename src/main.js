@@ -3,13 +3,11 @@ import { newKitFromWeb3 } from '@celo/contractkit'
 import BigNumber from "bignumber.js"
 import TodoListAbi from '../contract/todo.abi.json'
 import erc20Abi from "../contract/erc20.abi.json"
+import {TodoListContractAddress, cUSDContractAddress , ERC20_DECIMALS} from "./utils/constants";
 
 let kit
 let contract
 
-const ERC20_DECIMALS = 18
-const TodoListContractAddress = "0x3446456E89e3130226b21ed125e47E0d3C7a3420"
-const cUSDContractAddress = "0x874069Fa1Eb16D44d622F2e0Ca25eeA172369bC1"
 
 const connectCeloWallet = async function() {
   if (window.celo) {
@@ -139,7 +137,7 @@ async function changeTaskStatus(id, taskIndex) {
   let text = document.getElementById(textId);
   notification(`⌛ Changing task status `)
   try {
-    await contract.methods.updateStatus(taskIndex, checkbox.checked).send({ from: kit.defaultAccount });
+    await contract.methods.updateStatus(taskIndex).send({ from: kit.defaultAccount });
     if (checkbox.checked) {
       text.classList.add("task-done");
     } else {
@@ -171,8 +169,9 @@ document.querySelector("#addTaskBtn").addEventListener("click", async(e) => {
 
   try {
     await contract.methods.addTask(content).send({ from: kit.defaultAccount });
-    location.reload();
+    // location.reload();
 
+    await createTaskList()
   }
   catch (error) {
     notification(`⚠️ ${error}.`)
